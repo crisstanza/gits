@@ -12,4 +12,8 @@ Download a copy of "gits.bash" and run it from the root folder for your projects
 
 Pick a command. Example:
 
-    ./gits.bash logs
+    ./gits.bash log
+
+You can use multiple commands:
+
+    ./gits.bash status log pull
