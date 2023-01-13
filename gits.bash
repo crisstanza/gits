@@ -39,6 +39,12 @@ status() {
 	done
 }
 
+versions() {
+	echo "node: $(node --version)"
+	echo "npm: $(npm --version)"
+	echo "nvm: $(nvm --version)"
+}
+
 if [ ${#} -eq 0 ] ; then
 	echo -e "Usage: ${0} [COMMANDS]\nAvailable commands:"
 	cat `basename ${0}` | grep '()\s{' | while read COMMAND ; do echo " - ${COMMAND::-4}" ; done
