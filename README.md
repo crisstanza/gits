@@ -17,3 +17,7 @@ Pick a command. Example:
 You can use multiple commands:
 
     ./gits.bash status log pull
+
+## For GitBash, see the file:
+
+    C:\Program Files\Git\etc\profile.d\aliases.sh
