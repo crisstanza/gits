@@ -12,6 +12,15 @@ keygen() {
 	cat ~/.ssh/id_ed25519.pub ; echo
 }
 
+aliases() {
+	git config --global alias.co checkout
+	git config --global alias.br branch
+	git config --global alias.ci commit
+	git config --global alias.st status
+	git config --global alias.sw switch
+	git config --global alias.lr 'log --raw'
+}
+
 clone() {
 	for PROJECT in ${PROJECTS[*]} ; do
 		git clone ${HOST}:${OWNER}/${PROJECT}.git ; echo
