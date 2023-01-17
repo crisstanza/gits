@@ -52,6 +52,7 @@ versions() {
 	echo "node: $(node --version)"
 	echo "npm: $(npm --version)"
 	echo "nvm: $(nvm --version)"
+	echo "npx: $(npx --version)"
 }
 
 if [ ${#} -eq 0 ] ; then
