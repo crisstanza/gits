@@ -7,6 +7,22 @@ OWNER=crisstanza
 PROJECTS=()
 PROJECTS+=('gits')
 
+upgrade() {
+	sudo add-apt-repository -y ppa:git-core/ppa
+	sudo apt-get update
+	sudo apt-get install git -y
+}
+
+setLocalUser() {
+	for PROJECT in ${PROJECTS[*]} ; do
+		cd ${PROJECT} ; pwd ;
+		git config user.email "crisstanza@users.noreply.github.com"
+		git config user.name "Cris Stanza"
+		git config -l --local | grep user.
+		echo ; cd ..
+	done
+}
+
 keygen() {
 	ssh-keygen -t ed25519 ; echo
 	cat ~/.ssh/id_ed25519.pub ; echo
@@ -53,6 +69,7 @@ versions() {
 	echo "npm: $(npm --version)"
 	echo "nvm: $(nvm --version)"
 	echo "npx: $(npx --version)"
+	echo "git: $(git --version)"
 }
 
 if [ ${#} -eq 0 ] ; then
