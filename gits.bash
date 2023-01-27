@@ -73,7 +73,7 @@ versions() {
 }
 
 if [ ${#} -eq 0 ] ; then
-	echo -e "Usage: ${0} [COMMANDS]\nAvailable commands:"
+	echo -e "\nUsage: ${0} [COMMANDS]\n\nAvailable commands:"
 	cat `basename ${0}` | grep '()\s{' | while read COMMAND ; do echo " - ${COMMAND::-4}" ; done
 else
 	for COMMAND in "${@}" ; do "${COMMAND}" ; done
