@@ -23,6 +23,10 @@ setLocalUser() {
 	done
 }
 
+workarounds() {
+	git config core.protectNTFS false
+}
+
 keygen() {
 	ssh-keygen -t ed25519 ; echo
 	cat ~/.ssh/id_ed25519.pub ; echo
